@@ -18,7 +18,7 @@ def main():
     hostname = 'your_server_ip'  # should be obv.
     port = 22  # Standard-SSH-Port
     username = 'your_username'  # should be obv.
-    password = 'your_password'  # should be obv. (could also use SSH-Key with commented funct at line 
+    password = 'your_password'  # should be obv. (could also use SSH-Key with commented funct at line 36-37)
 
     # List of Services you wanna Check for! DONT FORGET TO CHANGE!
     services = ['service1', 'service2', 'service3']  # SET YOUR SERVICES HERE!
@@ -28,10 +28,10 @@ def main():
         ssh = paramiko.SSHClient()
         # Setting the Host-Key-Policy with Paramiko for unknown Host-Keys
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        logger.info(f'Verbindungsaufbau zu {hostname}...')
+        logger.info(f'Trying Connection to.. {hostname}...')
         # Connect to Server
         ssh.connect(hostname, port, username, password)
-        logger.info('Verbindung hergestellt.')
+        logger.info('Connection Success.')
         #Uncomment to Connect to Server via SSH-Key for more security. Dont forget to uncomment the other one if you use the SSH-Key...
         #ssh.connect(hostname, port, username, key_filename='path/to/private/key')
         #logger.info('Connection success.')
