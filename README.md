@@ -1,2 +1,1 @@
-# Service-Checker-
-Check whether a specific Service is running
+PortScanner - currently being developed
